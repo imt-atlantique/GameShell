@@ -28,6 +28,6 @@ _mission_init() {
   cat $MISSION_DIR/data/template/$(gettext "en").txt > $template
 
   # get the answer
-  awk -F'-' '{print $2}' $log | sort | uniq -c | sort -rn | awk 'NR==1 {print $1}' > "$GSH_TMP/02_log_answer.txt"
+  awk -F'-' '{print $2}' $log | sort | uniq -c | sort -rn | awk 'NR==1 {print $4}' > "$GSH_TMP/02_log_answer.txt"
 }
 _mission_init
